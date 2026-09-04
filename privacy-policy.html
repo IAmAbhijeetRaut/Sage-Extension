@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Sage</title>
+  <meta name="description" content="How the Sage Chrome extension handles data: what it stores, what it never sends anywhere, and why each permission exists." />
+  <link rel="icon" href="assets/sage-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400..700;1,400..500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="index.html">
+      <img src="assets/sage-icon.png" alt="" />
+      <span>Sage</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="privacy-policy.html" aria-current="page">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms &amp; Conditions</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrap">
+    <div class="article-head">
+      <p class="kicker">Legal · Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: <span class="placeholder">FILL IN PUBLISH DATE</span> · Applies to the Sage Chrome extension</p>
+    </div>
+
+    <div class="article-layout">
+      <nav class="toc" aria-label="Table of contents">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#what-we-store">What Sage stores</a></li>
+          <li><a href="#what-we-never-do">What Sage never does</a></li>
+          <li><a href="#permissions">Permissions, in detail</a></li>
+          <li><a href="#third-parties">Third-party requests</a></li>
+          <li><a href="#soundscapes">Ambient soundscapes</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <article class="prose">
+        <h2 id="summary">Summary</h2>
+        <div class="callout">
+          <strong>Sage does not operate a server.</strong> There is nowhere for your data to go except your own device and, if you turn on Chrome sync, your own Google Account. We — the developer — never receive, see, or store any of it.
+        </div>
+        <p>
+          Sage is a new-tab dashboard extension for Google Chrome. It shows customizable
+          widgets — clocks, notes, a task list, bookmarks, a news reader, ambient
+          soundscapes, focus timers, and search — on every new tab you open. This
+          policy explains what information Sage touches to do that, where it lives,
+          and what it never does.
+        </p>
+
+        <h2 id="what-we-store">What Sage stores, and where</h2>
+        <p>Everything Sage saves is written using Chrome's own extension storage APIs, on your device:</p>
+        <ul>
+          <li><strong>Local storage (<code>chrome.storage.local</code>):</strong> your widget layout, notes, to-do items, habit tracker entries, bookmarked speed-dial shortcuts, news feed subscriptions, and app preferences.</li>
+          <li><strong>Synced storage (<code>chrome.storage.sync</code>):</strong> the same categories of settings, mirrored across your signed-in Chrome browsers through Google's own sync infrastructure — not through any server we operate. This only happens if Chrome sync is enabled on your device; it's a setting you control in Chrome itself, not inside Sage.</li>
+          <li><strong>Local cache (IndexedDB):</strong> recently fetched news articles, cached on-device so the News Feed widget loads quickly and works offline for a while. This is disposable cache, not account data.</li>
+        </ul>
+        <p>None of the above is transmitted to any server operated by Sage's developer, because no such server exists.</p>
+
+        <h2 id="what-we-never-do">What Sage never does</h2>
+        <ul>
+          <li>We never sell, rent, or trade your data — there is no data of yours in our possession to sell.</li>
+          <li>Sage contains no analytics SDK, no crash-reporting service, no advertising network, and no third-party tracking script of any kind.</li>
+          <li>Sage never reads the content of pages you browse outside its own new-tab dashboard.</li>
+          <li>Sage never asks for, stores, or transmits passwords, payment details, or government ID information.</li>
+        </ul>
+
+        <h2 id="permissions">Permissions, in detail</h2>
+        <p>Chrome requires every capability an extension might use to be declared up front. Here is what each declared permission is for and, importantly, what it is <em>not</em> used for:</p>
+        <ul>
+          <li><strong>storage / unlimitedStorage:</strong> saving your widgets and settings as described above.</li>
+          <li><strong>bookmarks:</strong> read and organize your existing Chrome bookmarks inside the Bookmarks drawer and Speed Dial widget. Sage can create, edit, or remove bookmarks only when you take an explicit action to do so (e.g. adding a shortcut to Speed Dial).</li>
+          <li><strong>tabs / tabGroups / sessions:</strong> let dashboard widgets show, search, and switch to your currently open tabs, tab groups, and recently closed sessions. Sage does not read the content of those tabs — only metadata Chrome exposes, like title and URL.</li>
+          <li><strong>alarms:</strong> schedules a periodic background check for new articles in the feeds you've subscribed to, so the News Feed widget stays current without you having to manually refresh it.</li>
+          <li><strong>scripting / favicon:</strong> used to fetch site icons shown next to bookmarks, tabs, and news sources — a purely visual lookup, not page content.</li>
+          <li>
+            <strong>identity / identity.email:</strong> reads the name and email already associated with your signed-in Chrome profile, non-interactively, so the dashboard can greet you by name and so your synced settings are correctly scoped to your account. This information is read locally and is never transmitted anywhere by Sage, including to us.
+          </li>
+          <li>
+            <strong>Host permissions (fixed list of news, weather, and search domains):</strong> Sage's News Feed widget fetches articles directly from each publisher's own server over HTTPS, entirely from your browser — never proxied through infrastructure we control. The Weather widget queries Open-Meteo and OpenStreetMap's geocoding service directly. The search bar queries Google's or DuckDuckGo's public suggestion endpoints directly. In every case, your browser talks straight to that third party; we're not in the middle and don't see the traffic.
+          </li>
+          <li>
+            <strong>Optional host permission (any site):</strong> requested only at the moment you add a custom RSS/Atom feed URL that isn't already in Sage's built-in list, and scoped to fetching that specific feed. You can decline the prompt and use only the built-in feed list instead.
+          </li>
+        </ul>
+
+        <h2 id="third-parties">Third-party requests Sage makes on your behalf</h2>
+        <p>Because Sage has no backend, every outbound request it makes happens directly from your browser to the relevant third party, using only the minimum information that request requires (for example, a city name to fetch a weather forecast, or a search query to fetch autocomplete suggestions). These include:</p>
+        <ul>
+          <li>News and media publishers you subscribe to, to fetch their public RSS/Atom feeds.</li>
+          <li>Open-Meteo and OpenStreetMap Nominatim, for weather data and place lookups.</li>
+          <li>Google and DuckDuckGo, for search-suggestion autocomplete.</li>
+          <li>Google's own account-sync infrastructure, if you have Chrome sync enabled.</li>
+        </ul>
+        <p>Each of these services has its own privacy practices, which we don't control. We chose services here that don't require you to create an account or share a persistent identifier with them.</p>
+
+        <h2 id="soundscapes">Ambient soundscapes</h2>
+        <p>
+          Sage's soundscape widget plays ambient audio (rain, waves, campfire, and similar) entirely on-device, using audio files bundled directly inside the extension. Playing a sound doesn't contact any server, log any listening activity, or leave your device. Two tracks are generated locally using the Web Audio API and involve no audio files at all.
+        </p>
+
+        <h2 id="retention">Retention and deletion</h2>
+        <p>
+          Because your data lives in Chrome's own storage, you control its retention directly: uninstalling Sage removes its local data from your device. Data mirrored through Chrome sync follows Chrome's own sync retention, which you can clear from Chrome's sync settings independent of Sage. The News Feed cache can be cleared at any time from within Sage's own settings.
+        </p>
+
+        <h2 id="children">Children's privacy</h2>
+        <p>
+          Sage is not directed at children and does not knowingly collect personal information from anyone. Because Sage collects no personal information on any server in the first place, there is no server-side data to distinguish by age.
+        </p>
+
+        <h2 id="changes">Changes to this policy</h2>
+        <p>
+          If this policy changes, the "last updated" date above will change with it. Material changes will also be reflected in the extension's Chrome Web Store listing.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          Questions about this policy or Sage's data practices can be sent to
+          <span class="placeholder">FILL IN SUPPORT EMAIL</span>.
+        </p>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/sage-icon.png" alt="" />
+        <span>Sage</span>
+      </a>
+      <ul class="foot-links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+      <p class="copyright">© 2026 Sage</p>
+    </div>
+  </footer>
+</body>
+</html>

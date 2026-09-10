@@ -29,7 +29,7 @@
     <div class="article-head">
       <p class="kicker">Legal · Privacy</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: <span class="placeholder">FILL IN PUBLISH DATE</span> · Applies to the Sage Chrome extension</p>
+      <p class="meta">Last updated: September 10, 2026 · Applies to the Sage Chrome extension</p>
     </div>
 
     <div class="article-layout">
@@ -86,7 +86,8 @@
           <li><strong>bookmarks:</strong> read and organize your existing Chrome bookmarks inside the Bookmarks drawer and Speed Dial widget. Sage can create, edit, or remove bookmarks only when you take an explicit action to do so (e.g. adding a shortcut to Speed Dial).</li>
           <li><strong>tabs / tabGroups / sessions:</strong> let dashboard widgets show, search, and switch to your currently open tabs, tab groups, and recently closed sessions. Sage does not read the content of those tabs — only metadata Chrome exposes, like title and URL.</li>
           <li><strong>alarms:</strong> schedules a periodic background check for new articles in the feeds you've subscribed to, so the News Feed widget stays current without you having to manually refresh it.</li>
-          <li><strong>scripting / favicon:</strong> used to fetch site icons shown next to bookmarks, tabs, and news sources — a purely visual lookup, not page content.</li>
+          <li><strong>favicon:</strong> used to fetch site icons shown next to bookmarks, tabs, and news sources — a purely visual lookup, not page content.</li>
+          <li><strong>scripting:</strong> used for two things. First, alongside the favicon lookup above. Second — only if you explicitly turn on the optional "Show alarm on any site" setting — Sage injects a small, self-contained alarm popup (snooze/dismiss controls and a sound) into your current tab so an alarm you set can still reach you if you're not on the Sage new-tab page when it fires. This injected popup reads and changes nothing on the page it appears over; it draws its own isolated UI on top and is removed the moment the alarm is dismissed or snoozed.</li>
           <li>
             <strong>identity / identity.email:</strong> reads the name and email already associated with your signed-in Chrome profile, non-interactively, so the dashboard can greet you by name and so your synced settings are correctly scoped to your account. This information is read locally and is never transmitted anywhere by Sage, including to us.
           </li>
@@ -94,7 +95,7 @@
             <strong>Host permissions (fixed list of news, weather, and search domains):</strong> Sage's News Feed widget fetches articles directly from each publisher's own server over HTTPS, entirely from your browser — never proxied through infrastructure we control. The Weather widget queries Open-Meteo and OpenStreetMap's geocoding service directly. The search bar queries Google's or DuckDuckGo's public suggestion endpoints directly. In every case, your browser talks straight to that third party; we're not in the middle and don't see the traffic.
           </li>
           <li>
-            <strong>Optional host permission (any site):</strong> requested only at the moment you add a custom RSS/Atom feed URL that isn't already in Sage's built-in list, and scoped to fetching that specific feed. You can decline the prompt and use only the built-in feed list instead.
+            <strong>Optional host permission (any site):</strong> Chrome only grants this after you explicitly opt in, for one of two features — adding a custom RSS/Atom feed URL not already in Sage's built-in list, or turning on "Show alarm on any site." Declining the prompt simply means that one feature stays off; everything else in Sage works normally either way.
           </li>
         </ul>
 
@@ -131,7 +132,7 @@
         <h2 id="contact">Contact</h2>
         <p>
           Questions about this policy or Sage's data practices can be sent to
-          <span class="placeholder">FILL IN SUPPORT EMAIL</span>.
+          <a href="mailto:abhijeetsde@gmail.com">abhijeetsde@gmail.com</a>.
         </p>
       </article>
     </div>

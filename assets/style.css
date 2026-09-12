@@ -1,7 +1,7 @@
 /* ============================================================
    Sage Tab — Official Public Site
-   Palette: Obsidian Dark Glass & Radiant Glowing Orange
-   Theme matches the official glowing Zen meditating mark (#ff9a40).
+   Palette: Obsidian Dark Glass & Radiant Glowing Orange (#ff9a40)
+   Full mobile responsiveness across all viewport breakpoints.
    ============================================================ */
 
 :root {
@@ -35,6 +35,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -93,9 +98,10 @@ img {
 /* ---------- layout shell ---------- */
 
 .wrap {
+  width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 56px);
+  padding: 0 clamp(16px, 4vw, 56px);
 }
 
 .site-nav {
@@ -105,15 +111,16 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px clamp(20px, 5vw, 56px);
+  padding: 16px clamp(16px, 4vw, 56px);
   background: rgba(7, 11, 17, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--hairline);
+  transition: padding 0.2s ease;
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
@@ -124,12 +131,13 @@ img {
   opacity: 0.95;
 }
 .brand img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 14px var(--orange-glow);
   display: block;
+  border: 1px solid rgba(255, 154, 64, 0.3);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
 .brand:hover img {
@@ -149,7 +157,7 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 3vw, 28px);
+  gap: clamp(12px, 2.5vw, 28px);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -160,6 +168,7 @@ img {
   font-weight: 500;
   text-decoration: none;
   transition: color 0.15s ease;
+  white-space: nowrap;
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
@@ -185,7 +194,7 @@ img {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(56px, 10vw, 112px) 0 clamp(48px, 8vw, 88px);
+  padding: clamp(48px, 8vw, 104px) 0 clamp(44px, 7vw, 84px);
   text-align: center;
 }
 
@@ -196,28 +205,34 @@ img {
   height: 100%;
   z-index: 0;
   opacity: 0.9;
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Top Hero Icon */
+/* Master Hero Brand Mark — Perfectly Centered Above Eyebrow */
 .hero-icon-wrap {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 20px auto;
+  width: fit-content;
 }
 .hero-icon-wrap::before {
   content: "";
   position: absolute;
-  inset: -28px;
+  inset: -32px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 154, 64, 0.45) 0%, rgba(234, 88, 12, 0.15) 50%, transparent 75%);
-  filter: blur(24px);
+  background: radial-gradient(circle, rgba(255, 154, 64, 0.45) 0%, rgba(234, 88, 12, 0.18) 50%, transparent 75%);
+  filter: blur(28px);
   z-index: -1;
   pointer-events: none;
   animation: pulseAura 4.5s ease-in-out infinite alternate;
@@ -233,23 +248,33 @@ img {
   }
 }
 .hero-brand-icon {
-  width: 96px;
-  height: 96px;
+  width: clamp(124px, 16vw, 148px);
+  height: clamp(124px, 16vw, 148px);
   object-fit: cover;
-  border-radius: 22px;
-  box-shadow: 0 0 35px var(--orange-glow), 0 8px 24px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 154, 64, 0.35);
+  border-radius: clamp(26px, 3.5vw, 34px);
+  box-shadow: 0 0 45px var(--orange-glow), 0 16px 40px rgba(0, 0, 0, 0.75);
+  border: 1.5px solid rgba(255, 154, 64, 0.45);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   display: block;
 }
 .hero-brand-icon:hover {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 0 45px rgba(255, 154, 64, 0.75), 0 12px 30px rgba(0, 0, 0, 0.7);
+  transform: scale(1.06) translateY(-3px);
+  box-shadow: 0 0 60px rgba(255, 154, 64, 0.8), 0 20px 50px rgba(0, 0, 0, 0.85);
+}
+
+/* Eyebrow Block Wrapper */
+.hero-eyebrow-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 24px auto;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 12px;
@@ -261,14 +286,14 @@ img {
   box-shadow: 0 0 18px rgba(255, 154, 64, 0.18);
   padding: 6px 16px;
   border-radius: 999px;
-  margin-bottom: 26px;
+  margin: 0;
 }
 
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(38px, 6vw, 64px);
-  line-height: 1.06;
+  font-size: clamp(34px, 5.5vw, 62px);
+  line-height: 1.08;
   letter-spacing: -0.015em;
   margin: 0 0 20px;
   text-wrap: balance;
@@ -284,7 +309,7 @@ img {
   max-width: 580px;
   margin: 0 auto 36px;
   color: var(--text-dim);
-  font-size: clamp(16px, 2vw, 19px);
+  font-size: clamp(15.5px, 2vw, 19px);
   line-height: 1.6;
   text-wrap: balance;
 }
@@ -295,11 +320,13 @@ img {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 13px 26px;
   border-radius: 999px;
@@ -309,6 +336,7 @@ img {
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 .btn:active {
   transform: scale(0.96);
@@ -348,13 +376,8 @@ img {
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin: 0 0 clamp(56px, 8vw, 96px);
+  margin: 0 0 clamp(48px, 8vw, 96px);
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
-}
-@media (max-width: 720px) {
-  .practice-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .practice-cell {
   background: var(--bg-raised);
@@ -394,7 +417,7 @@ img {
 /* ---------- section shell (index sections) ---------- */
 
 .section {
-  padding: clamp(40px, 6vw, 72px) 0;
+  padding: clamp(36px, 6vw, 72px) 0;
   border-top: 1px solid var(--hairline);
 }
 .section-head {
@@ -443,12 +466,6 @@ img {
 .perm-row:hover {
   background: #151e2e;
 }
-@media (max-width: 640px) {
-  .perm-row {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-}
 .perm-row code {
   font-family: var(--font-mono);
   font-size: 12.5px;
@@ -469,9 +486,9 @@ img {
 /* ---------- article (policy pages) ---------- */
 
 .article-head {
-  padding: clamp(48px, 8vw, 80px) 0 20px;
+  padding: clamp(40px, 8vw, 80px) 0 20px;
   border-bottom: 1px solid var(--hairline);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 .article-head .kicker {
   font-family: var(--font-mono);
@@ -484,7 +501,7 @@ img {
 .article-head h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(32px, 5vw, 46px);
+  font-size: clamp(30px, 5vw, 46px);
   letter-spacing: -0.015em;
   margin: 0 0 14px;
   text-wrap: balance;
@@ -500,13 +517,7 @@ img {
   display: grid;
   grid-template-columns: 200px minmax(0, 680px);
   gap: 56px;
-  padding-bottom: clamp(64px, 10vw, 120px);
-}
-@media (max-width: 860px) {
-  .article-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  padding-bottom: clamp(56px, 10vw, 120px);
 }
 
 .toc {
@@ -544,7 +555,7 @@ article.prose h2 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 22px;
-  margin: 40px 0 14px;
+  margin: 36px 0 14px;
   letter-spacing: -0.01em;
   scroll-margin-top: 90px;
   color: #ffffff;
@@ -643,4 +654,104 @@ footer .copyright {
   color: var(--text-faint);
   font-size: 12.5px;
   font-family: var(--font-mono);
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES (TABLETS & MOBILE DEVICES)
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .toc {
+    position: static;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-md);
+    margin-bottom: 44px;
+  }
+  .practice-cell {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links a {
+    font-size: 13.5px;
+  }
+
+  .hero {
+    padding: 36px 0 36px;
+  }
+  .hero-icon-wrap {
+    margin-bottom: 16px;
+  }
+  .hero-eyebrow-wrap {
+    margin-bottom: 20px;
+  }
+  .hero-brand-icon {
+    width: 112px;
+    height: 112px;
+    border-radius: 24px;
+  }
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero p.lede {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+    padding: 0 6px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .perm-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 16px;
+  }
+  .perm-row code {
+    word-break: break-all;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  footer .foot-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
 }

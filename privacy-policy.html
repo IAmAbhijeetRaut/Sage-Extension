@@ -42,6 +42,7 @@
           <li><a href="#permissions">Permissions, in detail</a></li>
           <li><a href="#third-parties">Third-party requests</a></li>
           <li><a href="#soundscapes">Ambient soundscapes</a></li>
+          <li><a href="#support">Support &amp; donations</a></li>
           <li><a href="#retention">Retention &amp; deletion</a></li>
           <li><a href="#children">Children's privacy</a></li>
           <li><a href="#changes">Changes to this policy</a></li>
@@ -70,6 +71,7 @@
           <li><strong>Local cache (IndexedDB):</strong> recently fetched news articles, cached on-device so the News Feed widget loads quickly and works offline for a while. This is disposable cache, not account data.</li>
         </ul>
         <p>None of the above is transmitted to any server operated by Sage's developer, because no such server exists.</p>
+        <p>Sage's use of any information obtained through Chrome APIs adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome Web Store User Data Policy</a>, including its Limited Use requirements.</p>
 
         <h2 id="what-we-never-do">What Sage never does</h2>
         <ul>
@@ -86,6 +88,7 @@
           <li><strong>bookmarks:</strong> read and organize your existing Chrome bookmarks inside the Bookmarks drawer and Speed Dial widget. Sage can create, edit, or remove bookmarks only when you take an explicit action to do so (e.g. adding a shortcut to Speed Dial).</li>
           <li><strong>tabs / tabGroups / sessions:</strong> let dashboard widgets show, search, and switch to your currently open tabs, tab groups, and recently closed sessions. Sage does not read the content of those tabs — only metadata Chrome exposes, like title and URL.</li>
           <li><strong>alarms:</strong> schedules a periodic background check for new articles in the feeds you've subscribed to, so the News Feed widget stays current without you having to manually refresh it.</li>
+          <li><strong>notifications:</strong> shows a native Chrome desktop notification for things you've explicitly scheduled inside Sage — a focus-timer session ending, a habit reminder, or an alarm you've set. Sage only shows a notification for something you configured yourself; it never sends any notification on its own initiative.</li>
           <li><strong>favicon:</strong> used to fetch site icons shown next to bookmarks, tabs, and news sources — a purely visual lookup, not page content.</li>
           <li><strong>scripting:</strong> used for two things. First, alongside the favicon lookup above. Second — only if you explicitly turn on the optional "Show alarm on any site" setting — Sage injects a small, self-contained alarm popup (snooze/dismiss controls and a sound) into your current tab so an alarm you set can still reach you if you're not on the Sage new-tab page when it fires. This injected popup reads and changes nothing on the page it appears over; it draws its own isolated UI on top and is removed the moment the alarm is dismissed or snoozed.</li>
           <li>
@@ -114,6 +117,18 @@
           Sage's soundscape widget plays ambient audio (rain, waves, campfire, and similar) entirely on-device, using audio files bundled directly inside the extension. Playing a sound doesn't contact any server, log any listening activity, or leave your device. Two tracks are generated locally using the Web Audio API and involve no audio files at all.
         </p>
 
+        <h2 id="support">Support &amp; donations</h2>
+        <p>
+          Sage includes an optional "Support Sage Tab" button that links out to
+          <a href="https://ko-fi.com/codexmatrix" target="_blank" rel="noopener noreferrer">Ko-fi</a>,
+          a third-party donation platform. Clicking it opens Ko-fi in a new tab — Sage does not collect,
+          process, or store any payment information itself, and no card or billing details are ever
+          entered inside the extension. Whatever happens on Ko-fi's own site is governed by
+          <a href="https://more.ko-fi.com/privacy-policy" target="_blank" rel="noopener noreferrer">Ko-fi's privacy policy</a>,
+          not this one. Supporting the project is entirely voluntary: every feature in Sage is fully
+          free and functional whether or not you ever click this button.
+        </p>
+
         <h2 id="retention">Retention and deletion</h2>
         <p>
           Because your data lives in Chrome's own storage, you control its retention directly: uninstalling Sage removes its local data from your device. Data mirrored through Chrome sync follows Chrome's own sync retention, which you can clear from Chrome's sync settings independent of Sage. The News Feed cache can be cleared at any time from within Sage's own settings.
@@ -132,7 +147,7 @@
         <h2 id="contact">Contact</h2>
         <p>
           Questions about this policy or Sage's data practices can be sent to
-          <a href="mailto:abhijeetsde@gmail.com">abhijeetsde@gmail.com</a>.
+          <a href="mailto:codexmatrixsupport@gmail.com">codexmatrixsupport@gmail.com</a>.
         </p>
       </article>
     </div>

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400..700;1,400..500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=4.0" />
+  <link rel="stylesheet" href="assets/style.css?v=5.0" />
 </head>
 <body>
 
@@ -46,6 +46,65 @@
       </div>
     </div>
   </header>
+
+  <!-- Horizontal Cover Flow Feature Showcase (50 PPT Slides) -->
+  <section class="showcase-section" id="feature-showcase" aria-label="Feature Showcase Cover Flow">
+    <div class="wrap showcase-wrap">
+      
+      <!-- Dynamic Text Header ABOVE the images -->
+      <div class="showcase-header" id="showcase-text-wrap">
+        <div class="showcase-meta-row">
+          <span class="showcase-kicker-pill" id="showcase-category">WORKSPACE DASHBOARD</span>
+          <span class="showcase-counter" id="showcase-counter">01 / 50</span>
+        </div>
+        <h2 class="showcase-title" id="showcase-title">Sage Tab — Apple Fluid Glass Architecture</h2>
+        <p class="showcase-desc" id="showcase-desc">A quiet, customizable new tab dashboard crafted in an Apple Fluid Glass interface with modular drag-and-drop widgets.</p>
+      </div>
+
+      <!-- Category Jump Filter Pills -->
+      <div class="showcase-pills-bar" aria-label="Feature categories">
+        <button class="showcase-pill active" data-category="ALL">All 50 Slides</button>
+        <button class="showcase-pill" data-category="WORKSPACE DASHBOARD">Workspace</button>
+        <button class="showcase-pill" data-category="SMART SEARCH">Smart Search</button>
+        <button class="showcase-pill" data-category="BOOKMARKS &amp; TABS">Bookmarks</button>
+        <button class="showcase-pill" data-category="WIDGETS &amp; WORKSPACES">Widgets</button>
+        <button class="showcase-pill" data-category="CUSTOMIZATION &amp; THEMES">Themes</button>
+        <button class="showcase-pill" data-category="FOCUS &amp; MINDFULNESS">Focus &amp; Zen</button>
+        <button class="showcase-pill" data-category="RSS NEWS READER">News Reader</button>
+      </div>
+
+      <!-- Cover Flow Stage with Navigation Controls -->
+      <div class="coverflow-container">
+        <button class="coverflow-nav-btn prev-btn" id="showcase-prev" aria-label="Previous slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="coverflow-stage" id="coverflow-stage">
+          <!-- Slide cards dynamically rendered and positioned by showcase.js -->
+        </div>
+
+        <button class="coverflow-nav-btn next-btn" id="showcase-next" aria-label="Next slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom Progress Track & Interaction Hint -->
+      <div class="showcase-footer-bar">
+        <div class="showcase-progress-track">
+          <div class="showcase-progress-bar" id="showcase-progress"></div>
+        </div>
+        <div class="showcase-hint">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="7"/><path d="M12 6v4"/></svg>
+          <span>Swipe or click side slides &bull; Arrow keys &larr; &rarr;</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <main class="wrap">
     <section class="practice-grid" aria-label="Data practices at a glance">
@@ -126,5 +185,6 @@
   </footer>
 
   <script src="assets/hero.js?v=4.0"></script>
+  <script src="assets/showcase.js?v=5.0"></script>
 </body>
 </html>

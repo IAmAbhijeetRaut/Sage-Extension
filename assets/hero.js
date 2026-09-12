@@ -1,4 +1,4 @@
-// Ambient hero backdrop — a handful of soft sage motes drifting on slow,
+// Ambient hero backdrop — a handful of soft amber/gold motes drifting on slow,
 // independent paths. Reads like a still, calm surface rather than an
 // obvious animation; on prefers-reduced-motion it renders one static frame.
 (function () {
@@ -17,15 +17,15 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
   }
 
-  const COUNT = 7
-  const palette = ["147,180,129", "183,207,159", "95,125,81"]
+  const COUNT = 8
+  const palette = ["251,146,60", "245,158,11", "234,88,12", "252,211,77"]
   const motes = Array.from({ length: COUNT }, (_, i) => ({
     x: Math.random(),
     y: Math.random(),
-    r: 90 + Math.random() * 160,
+    r: 100 + Math.random() * 180,
     color: palette[i % palette.length],
-    speedX: (Math.random() - 0.5) * 0.00012,
-    speedY: (Math.random() - 0.5) * 0.00009,
+    speedX: (Math.random() - 0.5) * 0.0001,
+    speedY: (Math.random() - 0.5) * 0.00008,
     phase: Math.random() * Math.PI * 2,
   }))
 
@@ -36,7 +36,8 @@
       const x = ((m.x + m.speedX * drift + 1) % 1) * w
       const y = (m.y + Math.sin(m.phase + drift * 0.00004) * 0.05) * h
       const grad = ctx.createRadialGradient(x, y, 0, x, y, m.r)
-      grad.addColorStop(0, `rgba(${m.color},0.16)`)
+      grad.addColorStop(0, `rgba(${m.color},0.15)`)
+      grad.addColorStop(0.6, `rgba(${m.color},0.05)`)
       grad.addColorStop(1, `rgba(${m.color},0)`)
       ctx.fillStyle = grad
       ctx.beginPath()

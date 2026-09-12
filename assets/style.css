@@ -420,7 +420,7 @@ img {
 
 .showcase-section {
   position: relative;
-  padding: clamp(52px, 7vw, 92px) 0 clamp(44px, 6vw, 84px);
+  padding: clamp(36px, 4.5vw, 64px) 0 clamp(32px, 4vw, 56px);
   background: radial-gradient(circle at 50% 15%, rgba(255, 154, 64, 0.07) 0%, rgba(7, 11, 17, 0) 65%),
               linear-gradient(180deg, #070b11 0%, #0a0f19 50%, #070b11 100%);
   border-bottom: 1px solid var(--hairline);
@@ -429,7 +429,7 @@ img {
 
 .showcase-wrap {
   position: relative;
-  max-width: 1320px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -437,19 +437,20 @@ img {
 /* Dynamic Text Header ABOVE images */
 .showcase-header {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 28px;
-  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  min-height: 140px;
+  max-width: 840px;
+  margin: 0 auto 20px;
+  height: 144px;
+  min-height: 144px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .showcase-header.fade-out {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 
 .showcase-meta-row {
@@ -457,7 +458,8 @@ img {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .showcase-kicker-pill {
@@ -484,24 +486,33 @@ img {
   border: 1px solid var(--hairline);
   padding: 4px 12px;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 .showcase-title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3.2vw, 34px);
+  font-size: clamp(22px, 2.8vw, 30px);
   font-weight: 600;
   color: #ffffff;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   letter-spacing: -0.015em;
   line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .showcase-desc {
-  font-size: clamp(14px, 1.6vw, 15.5px);
+  font-size: clamp(13.5px, 1.4vw, 15px);
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-  max-width: 660px;
+  max-width: 680px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Category Filter Pills */
@@ -511,8 +522,10 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 auto 34px;
+  margin: 0 auto 0;
   max-width: 980px;
+  position: relative;
+  z-index: 20;
 }
 
 .showcase-pill {
@@ -547,13 +560,14 @@ img {
 .coverflow-container {
   position: relative;
   width: 100%;
-  height: clamp(260px, 38vw, 440px);
+  height: clamp(300px, 42vw, 550px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 32px auto 0;
   user-select: none;
   overflow: visible;
+  z-index: 10;
 }
 
 .coverflow-stage {
@@ -571,9 +585,9 @@ img {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: clamp(290px, 48vw, 640px);
+  width: clamp(300px, 50vw, 840px);
   aspect-ratio: 16 / 9;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   background: #0b111c;
   cursor: pointer;
@@ -601,20 +615,20 @@ img {
   pointer-events: none;
 }
 
-/* Active Center Card (Full vibrant color, radiant orange glow, crisp) */
+/* Active Center Card (Zoomed & prominent, with ample top margin below pills) */
 .coverflow-card.active {
-  transform: translate(-50%, -50%) scale(1.04);
-  z-index: 10;
+  transform: translate(-50%, -50%) scale(1.08);
+  z-index: 15;
   opacity: 1;
-  filter: grayscale(0%) brightness(1) contrast(1);
-  border: 2px solid rgba(255, 154, 64, 0.75);
-  box-shadow: 0 0 50px rgba(255, 154, 64, 0.45), 0 25px 60px rgba(0, 0, 0, 0.92);
+  filter: grayscale(0%) brightness(1.02) contrast(1.02);
+  border: 2px solid rgba(255, 154, 64, 0.85);
+  box-shadow: 0 0 60px rgba(255, 154, 64, 0.48), 0 25px 70px rgba(0, 0, 0, 0.95);
   cursor: default;
 }
 
 /* Desaturated Side Cards */
 .coverflow-card.side {
-  filter: grayscale(100%) brightness(0.68) contrast(0.95);
+  filter: grayscale(100%) brightness(0.65) contrast(0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
 }
@@ -626,35 +640,35 @@ img {
 
 /* Immediate Left / Right (pos-1) */
 .coverflow-card.side.left.pos-1 {
-  transform: translate(calc(-50% - 62%), -50%) scale(0.88);
+  transform: translate(calc(-50% - 66%), -50%) scale(0.78);
   z-index: 5;
-  opacity: 0.42;
+  opacity: 0.36;
 }
 
 .coverflow-card.side.right.pos-1 {
-  transform: translate(calc(-50% + 62%), -50%) scale(0.88);
+  transform: translate(calc(-50% + 66%), -50%) scale(0.78);
   z-index: 5;
-  opacity: 0.42;
+  opacity: 0.36;
 }
 
 /* Outer Left / Right (pos-2) */
 .coverflow-card.side.left.pos-2 {
-  transform: translate(calc(-50% - 110%), -50%) scale(0.76);
+  transform: translate(calc(-50% - 114%), -50%) scale(0.64);
   z-index: 2;
-  opacity: 0.18;
+  opacity: 0.15;
   border-color: rgba(255, 255, 255, 0.05);
 }
 
 .coverflow-card.side.right.pos-2 {
-  transform: translate(calc(-50% + 110%), -50%) scale(0.76);
+  transform: translate(calc(-50% + 114%), -50%) scale(0.64);
   z-index: 2;
-  opacity: 0.18;
+  opacity: 0.15;
   border-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Transition buffer cards (pos-3) & Hidden */
 .coverflow-card.side.left.pos-3 {
-  transform: translate(calc(-50% - 150%), -50%) scale(0.65);
+  transform: translate(calc(-50% - 154%), -50%) scale(0.55);
   z-index: 1;
   opacity: 0;
   pointer-events: none;
@@ -662,7 +676,7 @@ img {
 }
 
 .coverflow-card.side.right.pos-3 {
-  transform: translate(calc(-50% + 150%), -50%) scale(0.65);
+  transform: translate(calc(-50% + 154%), -50%) scale(0.55);
   z-index: 1;
   opacity: 0;
   pointer-events: none;
@@ -761,16 +775,22 @@ img {
     min-height: 130px;
     margin-bottom: 20px;
   }
+  .coverflow-container {
+    height: clamp(260px, 48vw, 440px);
+  }
   .coverflow-card {
-    width: clamp(290px, 64vw, 520px);
+    width: clamp(300px, 74vw, 680px);
+  }
+  .coverflow-card.active {
+    transform: translate(-50%, -50%) scale(1.08);
   }
   .coverflow-card.side.left.pos-1 {
-    transform: translate(calc(-50% - 68%), -50%) scale(0.86);
-    opacity: 0.35;
+    transform: translate(calc(-50% - 72%), -50%) scale(0.78);
+    opacity: 0.3;
   }
   .coverflow-card.side.right.pos-1 {
-    transform: translate(calc(-50% + 68%), -50%) scale(0.86);
-    opacity: 0.35;
+    transform: translate(calc(-50% + 72%), -50%) scale(0.78);
+    opacity: 0.3;
   }
   .coverflow-card.side.left.pos-2,
   .coverflow-card.side.right.pos-2 {
@@ -810,23 +830,24 @@ img {
     display: none;
   }
   .coverflow-container {
-    height: clamp(210px, 52vw, 290px);
+    height: clamp(220px, 56vw, 320px);
   }
   .coverflow-card {
-    width: 82vw;
-    border-radius: 12px;
+    width: 86vw;
+    border-radius: 14px;
   }
   .coverflow-card.active {
+    transform: translate(-50%, -50%) scale(1.04);
     border-width: 1.5px;
-    box-shadow: 0 0 32px rgba(255, 154, 64, 0.4), 0 15px 35px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 36px rgba(255, 154, 64, 0.45), 0 16px 36px rgba(0, 0, 0, 0.88);
   }
   .coverflow-card.side.left.pos-1 {
-    transform: translate(calc(-50% - 80%), -50%) scale(0.82);
-    opacity: 0.22;
+    transform: translate(calc(-50% - 82%), -50%) scale(0.76);
+    opacity: 0.18;
   }
   .coverflow-card.side.right.pos-1 {
-    transform: translate(calc(-50% + 80%), -50%) scale(0.82);
-    opacity: 0.22;
+    transform: translate(calc(-50% + 82%), -50%) scale(0.76);
+    opacity: 0.18;
   }
   .coverflow-nav-btn {
     width: 38px;

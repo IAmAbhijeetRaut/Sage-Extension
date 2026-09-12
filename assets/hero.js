@@ -1,6 +1,4 @@
-// Ambient hero backdrop — a handful of soft amber/gold motes drifting on slow,
-// independent paths. Reads like a still, calm surface rather than an
-// obvious animation; on prefers-reduced-motion it renders one static frame.
+// Ambient hero backdrop — glowing orange motes drifting on slow, independent paths
 (function () {
   const canvas = document.getElementById("hero-canvas")
   if (!canvas) return
@@ -18,11 +16,11 @@
   }
 
   const COUNT = 8
-  const palette = ["251,146,60", "245,158,11", "234,88,12", "252,211,77"]
+  const palette = ["255,154,64", "249,115,22", "234,88,12", "251,191,36"]
   const motes = Array.from({ length: COUNT }, (_, i) => ({
     x: Math.random(),
     y: Math.random(),
-    r: 100 + Math.random() * 180,
+    r: 110 + Math.random() * 190,
     color: palette[i % palette.length],
     speedX: (Math.random() - 0.5) * 0.0001,
     speedY: (Math.random() - 0.5) * 0.00008,
@@ -36,8 +34,8 @@
       const x = ((m.x + m.speedX * drift + 1) % 1) * w
       const y = (m.y + Math.sin(m.phase + drift * 0.00004) * 0.05) * h
       const grad = ctx.createRadialGradient(x, y, 0, x, y, m.r)
-      grad.addColorStop(0, `rgba(${m.color},0.15)`)
-      grad.addColorStop(0.6, `rgba(${m.color},0.05)`)
+      grad.addColorStop(0, `rgba(${m.color},0.18)`)
+      grad.addColorStop(0.5, `rgba(${m.color},0.06)`)
       grad.addColorStop(1, `rgba(${m.color},0)`)
       ctx.fillStyle = grad
       ctx.beginPath()

@@ -1,5 +1,5 @@
 /* ============================================================
-   Sage Tab — Horizontal Cover Flow Feature Showcase
+   Satori Tab — Horizontal Cover Flow Feature Showcase
    50 PPT Slide Images with Dynamic Category/Title Transitions,
    Desaturated Side Slides, Glowing Center Card & Touch Controls
    ============================================================ */
@@ -10,7 +10,7 @@
       id: 1,
       file: "01_Brand_Cover_Page.jpg",
       category: "WORKSPACE DASHBOARD",
-      title: "Sage Tab — Apple Fluid Glass Architecture",
+      title: "Satori Tab — Apple Fluid Glass Architecture",
       desc: "A quiet, customizable new tab dashboard crafted in an Apple Fluid Glass interface with modular drag-and-drop widgets."
     },
     {

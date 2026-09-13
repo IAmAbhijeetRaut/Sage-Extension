@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400..700;1,400..500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=4.0" />
+  <link rel="stylesheet" href="assets/style.css?v=6.0" />
 </head>
 <body>
 
@@ -18,18 +18,27 @@
       <img src="assets/sage-tab-badge.png?v=4.0" alt="Sage Tab Logo" />
       <span>Sage Tab</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Overview</a></li>
-      <li><a href="privacy-policy.html" aria-current="page">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms &amp; Conditions</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="privacy-policy.html" aria-current="page">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+      <a class="nav-cta" href="https://chromewebstore.google.com/detail/nnblfnhidlofhfkgldgpeemblahjbpkc?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.827-2.738L1.931 5.47zm13.12 7.075a5.454 5.454 0 0 1-1.396 4.795L8.318 23.49A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12 0-.698-.06-1.382-.174-2.045H13.682l1.369 2.59z"/>
+          <circle cx="12" cy="12" r="3.273"/>
+        </svg>
+        <span>Add to Chrome</span>
+      </a>
+    </div>
   </nav>
 
   <div class="wrap">
     <div class="article-head">
       <p class="kicker">Legal · Privacy</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: September 12, 2026 · Applies to the Sage Tab Chrome extension</p>
+      <p class="meta">Last updated: September 12, 2026 · Applies to the <a href="https://chromewebstore.google.com/detail/nnblfnhidlofhfkgldgpeemblahjbpkc?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">Sage Tab Chrome extension ↗</a></p>
     </div>
 
     <div class="article-layout">
@@ -51,6 +60,33 @@
       </nav>
 
       <article class="prose">
+        <!-- Official Chrome Web Store Verified Release Card -->
+        <div class="cws-banner">
+          <div class="cws-banner-left">
+            <img src="assets/sage-tab-badge.png?v=4.0" alt="Sage Tab Icon" class="cws-banner-icon" />
+            <div class="cws-banner-meta">
+              <div class="cws-badge-row">
+                <span class="cws-ext-name">Sage Tab</span>
+                <span class="cws-badge-pill">
+                  <span class="cws-badge-dot"></span>
+                  Verified Release
+                </span>
+              </div>
+              <p class="cws-banner-sub">Chrome Web Store ID: <code>nnblfnhidlofhfkgldgpeemblahjbpkc</code></p>
+            </div>
+          </div>
+          <a class="cws-install-btn" href="https://chromewebstore.google.com/detail/nnblfnhidlofhfkgldgpeemblahjbpkc?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.827-2.738L1.931 5.47zm13.12 7.075a5.454 5.454 0 0 1-1.396 4.795L8.318 23.49A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12 0-.698-.06-1.382-.174-2.045H13.682l1.369 2.59z"/>
+              <circle cx="12" cy="12" r="3.273"/>
+            </svg>
+            <span>View on Web Store</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+        </div>
+
         <h2 id="summary">Summary</h2>
         <div class="callout">
           <strong>Sage Tab does not operate a server.</strong> There is nowhere for your data to go except your own device and, if you turn on Chrome sync, your own Google Account. We — the developer — never receive, see, or store any of it.
@@ -141,7 +177,7 @@
 
         <h2 id="changes">Changes to this policy</h2>
         <p>
-          If this policy changes, the "last updated" date above will change with it. Material changes will also be reflected in the extension's Chrome Web Store listing.
+          If this policy changes, the "last updated" date above will change with it. Material changes will also be reflected in the extension's <a href="https://chromewebstore.google.com/detail/nnblfnhidlofhfkgldgpeemblahjbpkc?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">Chrome Web Store listing</a>.
         </p>
 
         <h2 id="contact">Contact</h2>
@@ -160,6 +196,7 @@
         <span>Sage Tab</span>
       </a>
       <ul class="foot-links">
+        <li><a href="https://chromewebstore.google.com/detail/nnblfnhidlofhfkgldgpeemblahjbpkc?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
         <li><a href="privacy-policy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms &amp; Conditions</a></li>
       </ul>

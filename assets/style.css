@@ -219,8 +219,11 @@ img {
   box-shadow: 0 0 24px rgba(255, 154, 64, 0.55), 0 4px 12px rgba(234, 88, 12, 0.4);
   transform: translateY(-1px);
 }
+.nav-cta i,
 .nav-cta svg {
   flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* ---------- hero ---------- */
@@ -333,6 +336,16 @@ a.eyebrow:hover {
   transform: translateY(-1px);
   color: #ffffff;
 }
+.eyebrow i {
+  font-size: 13px;
+  line-height: 1;
+  color: var(--orange);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s ease;
+}
+a.eyebrow:hover i {
+  transform: translate(1px, -1px);
+  color: #ffffff;
+}
 .eyebrow-dot {
   width: 7px;
   height: 7px;
@@ -410,6 +423,11 @@ a.eyebrow:hover {
   box-shadow: 0 0 0 1px rgba(255, 154, 64, 0.7), 0 16px 36px -8px rgba(249, 115, 22, 0.75);
   transform: translateY(-1px);
 }
+.btn-primary i {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
 .btn-ghost {
   background: rgba(255, 255, 255, 0.05);
   border-color: var(--surface-border);
@@ -457,6 +475,10 @@ a.eyebrow:hover {
   justify-content: center;
   margin-bottom: 16px;
   box-shadow: 0 0 12px rgba(255, 154, 64, 0.15);
+}
+.practice-cell .glyph i {
+  font-size: 20px;
+  line-height: 1;
 }
 .practice-cell h3 {
   font-family: var(--font-display);
@@ -770,6 +792,10 @@ a.eyebrow:hover {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
   transition: all 0.22s ease;
 }
+.coverflow-nav-btn i {
+  font-size: 24px;
+  line-height: 1;
+}
 
 .coverflow-nav-btn:hover {
   background: var(--orange);
@@ -823,8 +849,11 @@ a.eyebrow:hover {
   font-family: var(--font-mono);
 }
 
+.showcase-hint i,
 .showcase-hint svg {
   color: var(--orange);
+  font-size: 15px;
+  line-height: 1;
 }
 
 /* Responsive Breakpoints */
@@ -1249,8 +1278,20 @@ article.prose a {
   box-shadow: 0 0 0 1px rgba(255, 154, 64, 0.6), 0 12px 28px -6px rgba(249, 115, 22, 0.75);
   transform: translateY(-1px);
 }
+.cws-install-btn i,
 .cws-install-btn svg {
   flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+.cws-install-btn i.ri-arrow-right-up-line {
+  font-size: 13px;
+  margin-left: 2px;
+}
+.meta a i {
+  font-size: 12px;
+  margin-left: 2px;
+  vertical-align: -1px;
 }
 
 /* ---------- footer ---------- */

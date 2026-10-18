@@ -686,6 +686,8 @@ a.eyebrow:hover i {
   object-fit: cover;
   display: block;
   pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .coverflow-card .card-gloss {
